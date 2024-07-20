@@ -37,6 +37,7 @@ func _on_Item1_input_event(_viewport, event, _shape_idx):
 			dragging = true
 		else:
 			dragging = false
+			check_drop()
 
 func _on_Item2_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -45,6 +46,7 @@ func _on_Item2_input_event(_viewport, event, _shape_idx):
 			dragging = true
 		else:
 			dragging = false
+			check_drop()
 
 func _on_Item3_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -53,6 +55,7 @@ func _on_Item3_input_event(_viewport, event, _shape_idx):
 			dragging = true
 		else:
 			dragging = false
+			check_drop()
 
 func _process(_delta):
 	if dragging and selected_item:
@@ -62,10 +65,26 @@ func _process(_delta):
 # Проверка правильности выбора
 func check_match(person, item):
 	if correct_pairs[person] == item:
-		$ResultLabel.text = "Правильно!"
+		show_result("Правильно!")
 	else:
-		$ResultLabel.text = "Неправильно, попробуйте снова."
+		show_result("Неправильно, попробуйте снова.")
 
+# Проверка, был ли предмет отпущен над персонажем
+func check_drop():
+	for person in ["Person1", "Person2", "Person3"]:
+		if is_entered[person]:
+			check_match(person, selected_item.name)
+			break
+
+# Функция для отображения результата
+func show_result(message):
+	$ResultPopup/Sprite2D/ResultLabel.text = message
+	$ResultPopup.popup_centered()
+
+# Функция для скрытия окна при нажатии
+func _on_ResultPopup_gui_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		$ResultPopup.hide()
 
 func _on_person_1_area_entered(area):
 	if area.name == "Item1":
@@ -89,11 +108,9 @@ func _on_person_1_area_exited(area):
 	if area.name == "Item1":
 		is_entered["Person1"] = false
 
-
 func _on_person_2_area_exited(area):
 	if area.name == "Item2":
 		is_entered["Person2"] = false
-
 
 func _on_person_3_area_exited(area):
 	if area.name == "Item3":
@@ -122,4 +139,3 @@ func _on_person_3_input_event(_viewport, event, _shape_idx):
 			check_match("Person3", "Item3")
 		elif is_entered["Person3"] == null:
 			check_match("Person1", " ")
-

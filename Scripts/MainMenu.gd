@@ -5,6 +5,7 @@ extends Control
 
 
 func _ready():
+	
 	start_button.connect("pressed", Callable(self, "_on_StartButton_pressed"))
 	exit_button.connect("pressed", Callable(self, "_on_ExitButton_pressed"))
 
@@ -24,3 +25,4 @@ func _on_exit_button_pressed():
 	$Click_sound.play()
 	await get_tree().create_timer(0.35).timeout
 	get_tree().quit()
+	
