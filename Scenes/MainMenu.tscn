@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://b81twh1xtva0u"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_tyq1o"]
+[ext_resource type="Texture2D" uid="uid://bq2wrnl66j5dj" path="res://Sprites/Ui/button_rectangle_flat.svg" id="2_gop8s"]
+[ext_resource type="Texture2D" uid="uid://xa8stvyg8bto" path="res://Sprites/Ui/button_rectangle_gloss.svg" id="3_45sgc"]
+[ext_resource type="Texture2D" uid="uid://di3cgwtpb75ov" path="res://Sprites/Ui/button_rectangle_gradient.svg" id="4_hixyg"]
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="5_tvxdp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tyq1o")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 652.0
+
+[node name="TextureRect" type="TextureRect" parent="TitleLabel"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 220.0
+offset_right = 672.0
+offset_bottom = 284.0
+texture_normal = ExtResource("2_gop8s")
+texture_pressed = ExtResource("3_45sgc")
+texture_hover = ExtResource("4_hixyg")
+
+[node name="Label" type="Label" parent="StartButton"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 55.0
+theme = ExtResource("5_tvxdp")
+text = "Start"
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 329.0
+offset_right = 674.0
+offset_bottom = 393.0
+texture_normal = ExtResource("2_gop8s")
+texture_pressed = ExtResource("3_45sgc")
+texture_hover = ExtResource("4_hixyg")
+
+[node name="Label" type="Label" parent="ExitButton"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 156.0
+offset_bottom = 55.0
+theme = ExtResource("5_tvxdp")
+text = "Exit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

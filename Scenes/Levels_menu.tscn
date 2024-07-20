@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpunve4cxpkhc"]
+
+[ext_resource type="Texture2D" uid="uid://lvxq7872aofg" path="res://Sprites/Ui/button_square_depth_flat.svg" id="1_01ngl"]
+[ext_resource type="Texture2D" uid="uid://u1caneo3pk8m" path="res://Sprites/Ui/button_square_gloss.svg" id="2_5bnxq"]
+[ext_resource type="Texture2D" uid="uid://d0w537avrk2o7" path="res://Sprites/Ui/button_square_gradient.svg" id="3_uao4v"]
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="4_nfmie"]
+[ext_resource type="Texture2D" uid="uid://bj60cetw65h0t" path="res://Sprites/Ui/button_square_depth_border.svg" id="5_27pfx"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(104, 110)
+
+[node name="First_level" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_01ngl")
+texture_pressed = ExtResource("2_5bnxq")
+texture_hover = ExtResource("3_uao4v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="First_level"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 6.0
+offset_right = 63.0
+offset_bottom = 51.0
+theme = ExtResource("4_nfmie")
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Second_level" type="TextureButton" parent="."]
+offset_left = 104.0
+offset_right = 168.0
+offset_bottom = 64.0
+disabled = true
+texture_normal = ExtResource("5_27pfx")
+texture_pressed = ExtResource("2_5bnxq")
+texture_hover = ExtResource("3_uao4v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Second_level"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 7.0
+offset_right = 61.0
+offset_bottom = 52.0
+theme = ExtResource("4_nfmie")
+text = "2"
+metadata/_edit_use_anchors_ = true
