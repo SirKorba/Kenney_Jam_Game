@@ -1,12 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvxp08vs8n6cr"]
+[gd_scene load_steps=2 format=3 uid="uid://cvxp08vs8n6cr"]
 
-[ext_resource type="Texture2D" uid="uid://lvxq7872aofg" path="res://Sprites/Ui/button_square_depth_flat.svg" id="1_01ngl"]
-[ext_resource type="Texture2D" uid="uid://u1caneo3pk8m" path="res://Sprites/Ui/button_square_gloss.svg" id="2_5bnxq"]
-[ext_resource type="Texture2D" uid="uid://d0w537avrk2o7" path="res://Sprites/Ui/button_square_gradient.svg" id="3_uao4v"]
-[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="4_nfmie"]
-[ext_resource type="Texture2D" uid="uid://bj60cetw65h0t" path="res://Sprites/Ui/button_square_depth_border.svg" id="5_27pfx"]
-[ext_resource type="Texture2D" uid="uid://bxnk5f5xk0emg" path="res://Sprites/Ui/button_square_flat.svg" id="6_o6viv"]
-[ext_resource type="Script" path="res://Scripts/select_Level.gd" id="7_fd850"]
+[ext_resource type="PackedScene" uid="uid://dxgw1dh576mtm" path="res://Prefabs/Change_level_button.tscn" id="8_h355i"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,60 +10,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="First_level" type="TextureButton" parent="."]
-offset_left = 119.0
-offset_top = 125.0
-offset_right = 183.0
-offset_bottom = 189.0
-texture_normal = ExtResource("1_01ngl")
-texture_pressed = ExtResource("2_5bnxq")
-texture_hover = ExtResource("3_uao4v")
-script = ExtResource("7_fd850")
-
-[node name="Label" type="Label" parent="First_level"]
+[node name="Change_level_button" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 6.0
-offset_right = 63.0
-offset_bottom = 51.0
-theme = ExtResource("4_nfmie")
-text = "1"
+offset_left = 83.0
+offset_top = 208.0
+offset_right = 147.0
+offset_bottom = 272.0
+level = "T"
 
-[node name="Second_level" type="TextureButton" parent="."]
-offset_left = 223.0
-offset_top = 125.0
-offset_right = 287.0
-offset_bottom = 189.0
-disabled = true
-texture_normal = ExtResource("5_27pfx")
-texture_pressed = ExtResource("2_5bnxq")
-texture_hover = ExtResource("3_uao4v")
-script = ExtResource("7_fd850")
-
-[node name="Label" type="Label" parent="Second_level"]
+[node name="Change_level_button2" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 7.0
-offset_right = 61.0
-offset_bottom = 52.0
-theme = ExtResource("4_nfmie")
-text = "2"
+offset_left = 83.0
+offset_top = 122.0
+offset_right = 147.0
+offset_bottom = 186.0
 
-[node name="test_Level" type="TextureButton" parent="."]
-offset_left = 120.0
-offset_top = 220.0
-offset_right = 184.0
-offset_bottom = 284.0
-texture_normal = ExtResource("6_o6viv")
-texture_pressed = ExtResource("2_5bnxq")
-texture_hover = ExtResource("3_uao4v")
-script = ExtResource("7_fd850")
-
-[node name="Label" type="Label" parent="test_Level"]
+[node name="Change_level_button3" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 10.0
-offset_right = 61.0
-offset_bottom = 55.0
-theme = ExtResource("4_nfmie")
-text = "T"
+offset_left = 166.0
+offset_top = 122.0
+offset_right = 230.0
+offset_bottom = 186.0
+level = "2"

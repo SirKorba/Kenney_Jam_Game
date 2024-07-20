@@ -1,10 +1,13 @@
 extends TextureButton
 
-var level
+@export var level = "1"
 var scene = "res://Scenes/Levels/"
 
 func _ready():
-	level = get_node("Label").text
+	if level != "T" and int(level) > 1:
+		disabled = true
+		
+	get_node("Label").text = level
 	
 func _pressed():
 	if level == "T":

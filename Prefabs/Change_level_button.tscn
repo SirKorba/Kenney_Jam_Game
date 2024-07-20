@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxgw1dh576mtm"]
+
+[ext_resource type="Texture2D" uid="uid://lvxq7872aofg" path="res://Sprites/Ui/button_square_depth_flat.svg" id="1_ys57q"]
+[ext_resource type="Texture2D" uid="uid://b7cairo32sigu" path="res://Sprites/Ui/button_square_depth_gloss.svg" id="2_p5uah"]
+[ext_resource type="Texture2D" uid="uid://doprd28ip8ycg" path="res://Sprites/Ui/button_square_depth_gradient.svg" id="3_lgfdh"]
+[ext_resource type="Script" path="res://Scripts/select_Level.gd" id="4_08ni1"]
+[ext_resource type="Texture2D" uid="uid://cg7yax7ihiywp" path="res://Sprites/Ui/button_square_border.svg" id="4_im5f2"]
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="5_de0ry"]
+
+[node name="Change_level_button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ys57q")
+texture_pressed = ExtResource("2_p5uah")
+texture_hover = ExtResource("3_lgfdh")
+texture_disabled = ExtResource("4_im5f2")
+script = ExtResource("4_08ni1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 63.0
+offset_bottom = 53.0
+theme = ExtResource("5_de0ry")
+text = "T"
