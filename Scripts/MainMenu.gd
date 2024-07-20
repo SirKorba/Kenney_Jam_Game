@@ -14,9 +14,13 @@ func _ready():
 
 func _on_start_button_pressed():
 	print("Start button pressed")
+	$Click_sound.play()
+	await get_tree().create_timer(0.35).timeout
 	get_tree().change_scene_to_file("res://Scenes/Levels_menu.tscn")
 
 
 func _on_exit_button_pressed():
 	print("Exit button pressed")
+	$Click_sound.play()
+	await get_tree().create_timer(0.35).timeout
 	get_tree().quit()

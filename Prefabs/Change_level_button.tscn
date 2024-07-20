@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxgw1dh576mtm"]
+[gd_scene load_steps=8 format=3 uid="uid://dxgw1dh576mtm"]
 
 [ext_resource type="Texture2D" uid="uid://lvxq7872aofg" path="res://Sprites/Ui/button_square_depth_flat.svg" id="1_ys57q"]
 [ext_resource type="Texture2D" uid="uid://b7cairo32sigu" path="res://Sprites/Ui/button_square_depth_gloss.svg" id="2_p5uah"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/select_Level.gd" id="4_08ni1"]
 [ext_resource type="Texture2D" uid="uid://cg7yax7ihiywp" path="res://Sprites/Ui/button_square_border.svg" id="4_im5f2"]
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="5_de0ry"]
+[ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/click-a.ogg" id="7_juch1"]
 
 [node name="Change_level_button" type="TextureButton"]
 offset_right = 40.0
@@ -24,3 +25,6 @@ offset_right = 63.0
 offset_bottom = 53.0
 theme = ExtResource("5_de0ry")
 text = "T"
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_juch1")
