@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvxp08vs8n6cr"]
+[gd_scene load_steps=8 format=3 uid="uid://bpunve4cxpkhc"]
 
 [ext_resource type="Texture2D" uid="uid://lvxq7872aofg" path="res://Sprites/Ui/button_square_depth_flat.svg" id="1_01ngl"]
 [ext_resource type="Texture2D" uid="uid://u1caneo3pk8m" path="res://Sprites/Ui/button_square_gloss.svg" id="2_5bnxq"]
@@ -8,23 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://bxnk5f5xk0emg" path="res://Sprites/Ui/button_square_flat.svg" id="6_o6viv"]
 [ext_resource type="Script" path="res://Scripts/select_Level.gd" id="7_fd850"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Node2D" type="Node2D"]
+position = Vector2(104, 110)
 
 [node name="First_level" type="TextureButton" parent="."]
-offset_left = 119.0
-offset_top = 125.0
-offset_right = 183.0
-offset_bottom = 189.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture_normal = ExtResource("1_01ngl")
 texture_pressed = ExtResource("2_5bnxq")
 texture_hover = ExtResource("3_uao4v")
 script = ExtResource("7_fd850")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="First_level"]
 layout_mode = 0
@@ -34,17 +28,17 @@ offset_right = 63.0
 offset_bottom = 51.0
 theme = ExtResource("4_nfmie")
 text = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Second_level" type="TextureButton" parent="."]
-offset_left = 223.0
-offset_top = 125.0
-offset_right = 287.0
-offset_bottom = 189.0
+offset_left = 104.0
+offset_right = 168.0
+offset_bottom = 64.0
 disabled = true
 texture_normal = ExtResource("5_27pfx")
 texture_pressed = ExtResource("2_5bnxq")
 texture_hover = ExtResource("3_uao4v")
-script = ExtResource("7_fd850")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Second_level"]
 layout_mode = 0
@@ -54,12 +48,13 @@ offset_right = 61.0
 offset_bottom = 52.0
 theme = ExtResource("4_nfmie")
 text = "2"
+metadata/_edit_use_anchors_ = true
 
 [node name="test_Level" type="TextureButton" parent="."]
-offset_left = 120.0
-offset_top = 220.0
-offset_right = 184.0
-offset_bottom = 284.0
+offset_left = 1.0
+offset_top = 95.0
+offset_right = 65.0
+offset_bottom = 159.0
 texture_normal = ExtResource("6_o6viv")
 texture_pressed = ExtResource("2_5bnxq")
 texture_hover = ExtResource("3_uao4v")
@@ -73,3 +68,5 @@ offset_right = 61.0
 offset_bottom = 55.0
 theme = ExtResource("4_nfmie")
 text = "T"
+
+[connection signal="pressed" from="First_level" to="First_level" method="_on_pressed"]
