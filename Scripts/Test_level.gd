@@ -63,20 +63,6 @@ func _on_Person3_Area_mouse_entered():
 
 # Привязка сигналов кнопок
 func _ready():
-	if !$Item1.is_connected("input_event", Callable(self, "_on_Item1_input_event")):
-		$Item1.connect("input_event", Callable(self, "_on_Item1_input_event"))
-	if !$Item2.is_connected("input_event", Callable(self, "_on_Item2_input_event")):
-		$Item2.connect("input_event", Callable(self, "_on_Item2_input_event"))
-	if !$Item3.is_connected("input_event", Callable(self, "_on_Item3_input_event")):
-		$Item3.connect("input_event", Callable(self, "_on_Item3_input_event"))
-
-	if !$person1/Person1_Area.is_connected("mouse_entered", Callable(self, "_on_Person1_Area_mouse_entered")):
-		$person1/Person1_Area.connect("mouse_entered", Callable(self, "_on_Person1_Area_mouse_entered"))
-	if !$person2/Person2_Area.is_connected("mouse_entered", Callable(self, "_on_Person2_Area_mouse_entered")):
-		$person2/Person2_Area.connect("mouse_entered", Callable(self, "_on_Person2_Area_mouse_entered"))
-	if !$person3/Person3_Area.is_connected("mouse_entered", Callable(self, "_on_Person3_Area_mouse_entered")):
-		$person3/Person3_Area.connect("mouse_entered", Callable(self, "_on_Person3_Area_mouse_entered"))
-
 	# Устанавливаем хинты
 	show_hint("Person1_Area")
 	show_hint("Person2_Area")
