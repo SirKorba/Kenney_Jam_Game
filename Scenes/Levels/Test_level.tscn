@@ -84,8 +84,11 @@ position = Vector2(936.024, 91.0473)
 shape = SubResource("RectangleShape2D_rg8fs")
 
 [connection signal="mouse_entered" from="person1/Person1_Area" to="." method="_on_Person1_Area_mouse_entered"]
+[connection signal="mouse_exited" from="person1/Person1_Area" to="." method="_on_Person1_Area_mouse_exited"]
 [connection signal="mouse_entered" from="person2/Person2_Area" to="." method="_on_Person2_Area_mouse_entered"]
+[connection signal="mouse_exited" from="person2/Person2_Area" to="." method="_on_Person2_Area_mouse_exited"]
 [connection signal="mouse_entered" from="person3/Person3_Area" to="." method="_on_Person3_Area_mouse_entered"]
+[connection signal="mouse_exited" from="person3/Person3_Area" to="." method="_on_Person3_Area_mouse_exited"]
 [connection signal="input_event" from="Item1" to="." method="_on_Item1_input_event"]
 [connection signal="input_event" from="Item2" to="." method="_on_Item2_input_event"]
 [connection signal="input_event" from="Item3" to="." method="_on_Item3_input_event"]
