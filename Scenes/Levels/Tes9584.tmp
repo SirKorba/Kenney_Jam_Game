@@ -6,53 +6,32 @@
 script = ExtResource("1_ouij6")
 
 [node name="Item1" type="Button" parent="."]
-offset_left = 115.0
-offset_top = 71.0
-offset_right = 214.0
-offset_bottom = 135.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Item2" type="Button" parent="Item1"]
 layout_mode = 0
-offset_left = 395.0
-offset_right = 461.0
-offset_bottom = 60.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Item3" type="Button" parent="Item1"]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 17.0
-offset_right = 811.0
-offset_bottom = 53.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Person1" type="Button" parent="."]
-offset_left = 131.0
-offset_top = 355.0
-offset_right = 199.0
-offset_bottom = 427.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Person2" type="Button" parent="Person1"]
 layout_mode = 0
-offset_left = 396.0
-offset_top = -31.0
-offset_right = 462.0
-offset_bottom = 48.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Person3" type="Button" parent="Person1"]
 layout_mode = 0
-offset_left = 663.0
-offset_top = -83.0
-offset_right = 870.0
-offset_bottom = 68.0
-
-[node name="HintLabel" type="Label" parent="."]
-offset_left = 236.0
-offset_top = 174.0
-offset_right = 418.0
-offset_bottom = 289.0
-
-[node name="ResultLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="pressed" from="Item1" to="." method="_on_item_1_pressed"]
 [connection signal="pressed" from="Item1/Item2" to="." method="_on_item_2_pressed"]
