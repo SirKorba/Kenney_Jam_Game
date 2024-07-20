@@ -1,48 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cidjo03p12tu2"]
+[gd_scene load_steps=4 format=3 uid="uid://cidjo03p12tu2"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level.gd" id="1_ouij6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0hsp"]
+size = Vector2(320.307, 331.26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg8fs"]
+size = Vector2(357, 233)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ouij6")
-
-[node name="Item1" type="Button" parent="."]
-offset_left = 115.0
-offset_top = 71.0
-offset_right = 214.0
-offset_bottom = 135.0
-
-[node name="Item2" type="Button" parent="Item1"]
-layout_mode = 0
-offset_left = 395.0
-offset_right = 461.0
-offset_bottom = 60.0
-
-[node name="Item3" type="Button" parent="Item1"]
-layout_mode = 0
-offset_left = 730.0
-offset_top = 17.0
-offset_right = 811.0
-offset_bottom = 53.0
-
-[node name="Person1" type="Button" parent="."]
-offset_left = 131.0
-offset_top = 355.0
-offset_right = 199.0
-offset_bottom = 427.0
-
-[node name="Person2" type="Button" parent="Person1"]
-layout_mode = 0
-offset_left = 396.0
-offset_top = -31.0
-offset_right = 462.0
-offset_bottom = 48.0
-
-[node name="Person3" type="Button" parent="Person1"]
-layout_mode = 0
-offset_left = 663.0
-offset_top = -83.0
-offset_right = 870.0
-offset_bottom = 68.0
 
 [node name="HintLabel" type="Label" parent="."]
 offset_left = 236.0
@@ -54,8 +21,71 @@ offset_bottom = 289.0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[connection signal="pressed" from="Item1" to="." method="_on_item_1_pressed"]
-[connection signal="pressed" from="Item1/Item2" to="." method="_on_item_2_pressed"]
-[connection signal="pressed" from="Item1/Item3" to="." method="_on_item_3_pressed"]
-[connection signal="pressed" from="Person1/Person2" to="." method="_on_person_2_pressed"]
-[connection signal="pressed" from="Person1/Person3" to="." method="_on_person_3_pressed"]
+[node name="person1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 176.0
+offset_top = 466.0
+offset_right = 310.0
+offset_bottom = 558.0
+
+[node name="Person1_Area" type="Area2D" parent="person1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="person1/Person1_Area"]
+position = Vector2(47.6144, 28.5192)
+shape = SubResource("RectangleShape2D_r0hsp")
+
+[node name="person2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 474.0
+offset_top = 368.0
+offset_right = 759.0
+offset_bottom = 563.0
+
+[node name="Person2_Area" type="Area2D" parent="person2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="person2/Person2_Area"]
+position = Vector2(132, 82)
+shape = SubResource("RectangleShape2D_r0hsp")
+
+[node name="person3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 831.0
+offset_top = 345.0
+offset_right = 1164.0
+offset_bottom = 536.0
+
+[node name="Person3_Area" type="Area2D" parent="person3"]
+position = Vector2(6, -21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="person3/Person3_Area"]
+position = Vector2(134, 127)
+shape = SubResource("RectangleShape2D_r0hsp")
+
+[node name="Item1" type="Area2D" parent="."]
+position = Vector2(63.0527, 71.2513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item1"]
+position = Vector2(118.447, 47.2487)
+shape = SubResource("RectangleShape2D_rg8fs")
+
+[node name="Item2" type="Area2D" parent="."]
+position = Vector2(610.754, 76.9051)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2"]
+shape = SubResource("RectangleShape2D_rg8fs")
+
+[node name="Item3" type="Area2D" parent="."]
+position = Vector2(936.024, 91.0473)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item3"]
+shape = SubResource("RectangleShape2D_rg8fs")
+
+[connection signal="mouse_entered" from="person1/Person1_Area" to="." method="_on_Person1_Area_mouse_entered"]
+[connection signal="mouse_entered" from="person2/Person2_Area" to="." method="_on_Person2_Area_mouse_entered"]
+[connection signal="mouse_entered" from="person3/Person3_Area" to="." method="_on_Person3_Area_mouse_entered"]
+[connection signal="input_event" from="Item1" to="." method="_on_Item1_input_event"]
+[connection signal="input_event" from="Item2" to="." method="_on_Item2_input_event"]
+[connection signal="input_event" from="Item3" to="." method="_on_Item3_input_event"]
