@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cidjo03p12tu2"]
+[gd_scene load_steps=8 format=3 uid="uid://cidjo03p12tu2"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level.gd" id="1_ouij6"]
 [ext_resource type="Texture2D" uid="uid://b40165yoow0br" path="res://Sprites/Ui/button_rectangle_depth_flat.svg" id="2_ynjbk"]
 [ext_resource type="Texture2D" uid="uid://kdfqfc3tfpld" path="res://Sprites/Ui/button_rectangle_border.svg" id="3_1glx2"]
 [ext_resource type="Texture2D" uid="uid://duxqmedknlwpi" path="res://Sprites/Ui/yellowfon.jpg" id="4_3iptt"]
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="5_6px73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rg8fs"]
 size = Vector2(357, 233)
@@ -100,6 +101,24 @@ offset_top = 252.0
 offset_right = 328.0
 offset_bottom = 331.0
 
+[node name="HintLabel1" type="Label" parent="HintLabel"]
+offset_left = 96.7119
+offset_top = 77.2997
+offset_right = 373.712
+offset_bottom = 156.3
+
+[node name="HintLabel2" type="Label" parent="HintLabel"]
+offset_left = 459.138
+offset_top = 68.0498
+offset_right = 736.138
+offset_bottom = 147.05
+
+[node name="HintLabel3" type="Label" parent="HintLabel"]
+offset_left = 852.799
+offset_top = 76.4536
+offset_right = 1129.8
+offset_bottom = 155.454
+
 [node name="ResultPopup" type="Popup" parent="."]
 size = Vector2i(452, 187)
 
@@ -107,8 +126,12 @@ size = Vector2i(452, 187)
 texture = ExtResource("4_3iptt")
 
 [node name="ResultLabel" type="Label" parent="ResultPopup/Sprite2D"]
-offset_right = 40.0
-offset_bottom = 23.0
+self_modulate = Color(1, 0, 0, 1)
+offset_left = 5.85036
+offset_top = 71.1605
+offset_right = 45.8504
+offset_bottom = 116.161
+theme = ExtResource("5_6px73")
 
 [connection signal="input_event" from="Items/Item1" to="." method="_on_Item1_input_event"]
 [connection signal="input_event" from="Items/Item2" to="." method="_on_Item2_input_event"]
