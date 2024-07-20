@@ -25,9 +25,37 @@ var hints = {
 	"Person3": "Я всегда ношу ключи с собой."
 }
 
+# Создаем окно уведомления и текстуру
+@onready var result_popup = $ResultPopup
+@onready var result_label = $ResultPopup/Sprite2D/ResultLabel
+
+# Ссылки на HintLabel для каждого персонажа
+@onready var hint_label_1 = $HintLabel/HintLabel1
+@onready var hint_label_2 = $HintLabel/HintLabel2
+@onready var hint_label_3 = $HintLabel/HintLabel3
+
+func _ready():
+	hide_all_hints()
+
 # Функция для отображения подсказок
 func show_hint(person):
-	$HintLabel.text = hints[person]
+	hide_all_hints()
+	match person:
+		"Person1":
+			hint_label_1.text = hints[person]
+			hint_label_1.show()
+		"Person2":
+			hint_label_2.text = hints[person]
+			hint_label_2.show()
+		"Person3":
+			hint_label_3.text = hints[person]
+			hint_label_3.show()
+
+# Функция для скрытия всех подсказок
+func hide_all_hints():
+	hint_label_1.hide()
+	hint_label_2.hide()
+	hint_label_3.hide()
 
 # Обработчики для перетаскивания предметов
 func _on_Item1_input_event(_viewport, event, _shape_idx):
@@ -65,9 +93,9 @@ func _process(_delta):
 # Проверка правильности выбора
 func check_match(person, item):
 	if correct_pairs[person] == item:
-		show_result("Правильно!")
+		show_result("Correctly!")
 	else:
-		show_result("Неправильно, попробуйте снова.")
+		show_result("Wrong, try again.")
 
 # Проверка, был ли предмет отпущен над персонажем
 func check_drop():
