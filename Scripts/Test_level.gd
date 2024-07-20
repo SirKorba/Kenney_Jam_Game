@@ -25,7 +25,7 @@ func show_hint(person):
 	$HintLabel.text = hints[person]
 
 # Обработчики для перетаскивания предметов
-func _on_Item1_input_event(viewport, event, shape_idx):
+func _on_Item1_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			selected_item = $Item1
@@ -35,7 +35,7 @@ func _on_Item1_input_event(viewport, event, shape_idx):
 			if current_person:
 				check_match(current_person.name, selected_item.name)
 
-func _on_Item2_input_event(viewport, event, shape_idx):
+func _on_Item2_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			selected_item = $Item2
@@ -45,7 +45,7 @@ func _on_Item2_input_event(viewport, event, shape_idx):
 			if current_person:
 				check_match(current_person.name, selected_item.name)
 
-func _on_Item3_input_event(viewport, event, shape_idx):
+func _on_Item3_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			selected_item = $Item3
@@ -76,11 +76,15 @@ func _on_Person3_Area_mouse_exited():
 
 # Привязка сигналов кнопок
 func _ready():
+<<<<<<< HEAD
+=======
+	# Устанавливаем хинты
+>>>>>>> 98960e9f3730cad5cc2c8b7c8fd064affab1e15b
 	show_hint("Person1_Area")
 	show_hint("Person2_Area")
 	show_hint("Person3_Area")
 
-func _process(delta):
+func _process(_delta):
 	if dragging and selected_item:
 		var mousepos = get_viewport().get_mouse_position()
 		selected_item.position = Vector2(mousepos.x, mousepos.y)
