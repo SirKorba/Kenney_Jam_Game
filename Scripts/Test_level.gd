@@ -2,6 +2,7 @@ extends Node2D
 
 var selected_item = null
 var dragging = false
+var current_person = null
 
 signal dragsignal
 
@@ -31,6 +32,8 @@ func _on_Item1_input_event(viewport, event, shape_idx):
 			dragging = true
 		else:
 			dragging = false
+			if current_person:
+				check_match(current_person.name, selected_item.name)
 
 func _on_Item2_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -39,6 +42,8 @@ func _on_Item2_input_event(viewport, event, shape_idx):
 			dragging = true
 		else:
 			dragging = false
+			if current_person:
+				check_match(current_person.name, selected_item.name)
 
 func _on_Item3_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -47,31 +52,30 @@ func _on_Item3_input_event(viewport, event, shape_idx):
 			dragging = true
 		else:
 			dragging = false
+			if current_person:
+				check_match(current_person.name, selected_item.name)
 
 # Обработчики для каждого персонажа
 func _on_Person1_Area_mouse_entered():
-	if dragging and selected_item:
-		check_match("Person1_Area", selected_item.name)
+	current_person = $person1/Person1_Area
+
+func _on_Person1_Area_mouse_exited():
+	current_person = null
 
 func _on_Person2_Area_mouse_entered():
-	if dragging and selected_item:
-		check_match("Person2_Area", selected_item.name)
+	current_person = $Person2_Area
+
+func _on_Person2_Area_mouse_exited():
+	current_person = null
 
 func _on_Person3_Area_mouse_entered():
-	if dragging and selected_item:
-		check_match("Person3_Area", selected_item.name)
+	current_person = $Person3_Area
+
+func _on_Person3_Area_mouse_exited():
+	current_person = null
 
 # Привязка сигналов кнопок
 func _ready():
-	$Item1.connect("input_event", Callable(self, "_on_Item1_input_event"))
-	$Item2.connect("input_event", Callable(self, "_on_Item2_input_event"))
-	$Item3.connect("input_event", Callable(self, "_on_Item3_input_event"))
-
-	$person1/Person1_Area.connect("mouse_entered", Callable(self, "_on_Person1_Area_mouse_entered"))
-	$person2/Person2_Area.connect("mouse_entered", Callable(self, "_on_Person2_Area_mouse_entered"))
-	$person3/Person3_Area.connect("mouse_entered", Callable(self, "_on_Person3_Area_mouse_entered"))
-
-	# Устанавливаем хинты
 	show_hint("Person1_Area")
 	show_hint("Person2_Area")
 	show_hint("Person3_Area")
