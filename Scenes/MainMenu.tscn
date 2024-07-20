@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://xa8stvyg8bto" path="res://Sprites/Ui/button_rectangle_gloss.svg" id="3_45sgc"]
 [ext_resource type="Texture2D" uid="uid://di3cgwtpb75ov" path="res://Sprites/Ui/button_rectangle_gradient.svg" id="4_hixyg"]
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="5_tvxdp"]
-[ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/click-a.ogg" id="6_l1rte"]
+[ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/Ui/click-a.ogg" id="6_l1rte"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
