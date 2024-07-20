@@ -68,5 +68,9 @@ text = "Exit"
 position = Vector2(480, 220)
 stream = ExtResource("6_l1rte")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 319)
+zoom = Vector2(2, 2)
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
