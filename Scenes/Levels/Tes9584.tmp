@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://p120yg5ucf38"]
+[gd_scene load_steps=2 format=3 uid="uid://cidjo03p12tu2"]
+
+[ext_resource type="Script" path="res://Scripts/Test_level.gd" id="1_ouij6"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ouij6")
 
 [node name="Item1" type="Button" parent="."]
 offset_right = 8.0
@@ -29,3 +32,9 @@ offset_bottom = 8.0
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[connection signal="pressed" from="Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="Item1/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="Item1/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="Person1/Person2" to="." method="_on_person_2_pressed"]
+[connection signal="pressed" from="Person1/Person3" to="." method="_on_person_3_pressed"]
