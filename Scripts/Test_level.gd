@@ -63,23 +63,19 @@ func _on_Person1_Area_mouse_exited():
 	current_person = null
 
 func _on_Person2_Area_mouse_entered():
-	current_person = $Person2_Area
+	current_person = $person2/Person2_Area
 
 func _on_Person2_Area_mouse_exited():
 	current_person = null
 
 func _on_Person3_Area_mouse_entered():
-	current_person = $Person3_Area
+	current_person = $person3/Person3_Area
 
 func _on_Person3_Area_mouse_exited():
 	current_person = null
 
 # Привязка сигналов кнопок
 func _ready():
-<<<<<<< HEAD
-=======
-	# Устанавливаем хинты
->>>>>>> 98960e9f3730cad5cc2c8b7c8fd064affab1e15b
 	show_hint("Person1_Area")
 	show_hint("Person2_Area")
 	show_hint("Person3_Area")
