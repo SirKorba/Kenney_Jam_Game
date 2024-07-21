@@ -133,6 +133,27 @@ offset_right = 45.8504
 offset_bottom = 116.161
 theme = ExtResource("5_6px73")
 
+[node name="LevelCompletePopup" type="Popup" parent="."]
+size = Vector2i(600, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelCompletePopup"]
+texture = ExtResource("4_3iptt")
+
+[node name="Label" type="Label" parent="LevelCompletePopup/Sprite2D"]
+self_modulate = Color(1, 0, 0, 1)
+offset_left = 5.85036
+offset_top = 71.1605
+offset_right = 45.8504
+offset_bottom = 116.161
+theme = ExtResource("5_6px73")
+text = " The level is passed!
+    Congratulations!"
+
+[node name="Button" type="Button" parent="LevelCompletePopup"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "ОК"
+
 [connection signal="input_event" from="Items/Item1" to="." method="_on_Item1_input_event"]
 [connection signal="input_event" from="Items/Item2" to="." method="_on_Item2_input_event"]
 [connection signal="input_event" from="Items/Item3" to="." method="_on_Item3_input_event"]
@@ -146,3 +167,5 @@ theme = ExtResource("5_6px73")
 [connection signal="area_exited" from="Persons/Person3" to="." method="_on_person_3_area_exited"]
 [connection signal="input_event" from="Persons/Person3" to="." method="_on_person_3_input_event"]
 [connection signal="gui_input" from="ResultPopup/Sprite2D/ResultLabel" to="." method="_on_ResultPopup_gui_input"]
+[connection signal="gui_input" from="LevelCompletePopup/Sprite2D/Label" to="." method="_on_ResultPopup_gui_input"]
+[connection signal="pressed" from="LevelCompletePopup/Button" to="." method="_on_LevelCompletePopup_button_pressed"]
