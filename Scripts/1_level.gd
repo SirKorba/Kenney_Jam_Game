@@ -26,7 +26,7 @@ func check_match(person, item):
 		show_result("Correctly!")
 		current_pairs[person] = item
 	else:
-		show_result("Try again.")
+		show_result("Wrong, try again.")
 	
 	check_all_correct()
 	
@@ -45,3 +45,4 @@ func check_all_correct():
 		if current_pairs[person] != correct_pairs[person]:
 			all_correct = false
 			break
+
