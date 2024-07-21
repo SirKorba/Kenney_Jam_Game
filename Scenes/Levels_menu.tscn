@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvxp08vs8n6cr"]
+[gd_scene load_steps=12 format=3 uid="uid://cvxp08vs8n6cr"]
 
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="1_sjmy7"]
+[ext_resource type="Texture2D" uid="uid://kdfqfc3tfpld" path="res://Sprites/Ui/button_rectangle_border.svg" id="2_gtk1c"]
 [ext_resource type="Texture2D" uid="uid://rvj2h65pg0nl" path="res://Sprites/Ui/button_round_depth_flat.svg" id="2_jpimc"]
+[ext_resource type="FontFile" uid="uid://cmag6q06ghlfk" path="res://Fonts/Kenney Future Narrow.ttf" id="3_0yrex"]
 [ext_resource type="Texture2D" uid="uid://byg1g85ltwf0y" path="res://Sprites/Ui/button_round_depth_gloss.svg" id="3_what1"]
 [ext_resource type="Texture2D" uid="uid://dclp5fmtmnjl0" path="res://Sprites/Ui/button_round_depth_gradient.svg" id="4_8ihh8"]
 [ext_resource type="Script" path="res://Scripts/Exit_to_mainmenu_button.gd" id="5_bfkn8"]
 [ext_resource type="Texture2D" uid="uid://uq7gmvihabes" path="res://Sprites/Ui/icon_outline_cross.svg" id="5_hvlhr"]
 [ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/Ui/click-a.ogg" id="7_vjc1x"]
 [ext_resource type="PackedScene" uid="uid://dxgw1dh576mtm" path="res://Prefabs/Change_level_button.tscn" id="8_h355i"]
+
+[sub_resource type="Theme" id="Theme_wt7ct"]
+default_font = ExtResource("3_0yrex")
+default_font_size = 35
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,35 +23,97 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Easy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 144.0
+offset_right = 383.0
+offset_bottom = 189.0
+theme = ExtResource("1_sjmy7")
+theme_override_colors/font_color = Color(0.241156, 0.241156, 0.241156, 1)
+text = "Easy"
+
+[node name="Sprite2D" type="Sprite2D" parent="Easy"]
+show_behind_parent = true
+light_mask = 2
+position = Vector2(62, 24)
+texture = ExtResource("2_gtk1c")
+
+[node name="Medium" type="Label" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 148.0
+offset_right = 679.0
+offset_bottom = 193.0
+theme = SubResource("Theme_wt7ct")
+theme_override_colors/font_color = Color(0.262932, 0.262932, 0.262932, 1)
+text = "Medium"
+
+[node name="Sprite2D" type="Sprite2D" parent="Medium"]
+show_behind_parent = true
+position = Vector2(81, 20)
+texture = ExtResource("2_gtk1c")
+
+[node name="Hard" type="Label" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 145.0
+offset_right = 906.0
+offset_bottom = 190.0
+theme = ExtResource("1_sjmy7")
+theme_override_colors/font_color = Color(0.255659, 0.255659, 0.255659, 1)
+text = "Hard"
+
+[node name="Sprite2D" type="Sprite2D" parent="Hard"]
+show_behind_parent = true
+position = Vector2(62, 24)
+texture = ExtResource("2_gtk1c")
+
 [node name="Change_level_button" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 289.0
-offset_right = 400.0
-offset_bottom = 353.0
+offset_left = 223.0
+offset_top = 300.0
+offset_right = 287.0
+offset_bottom = 364.0
 level = "T"
 
 [node name="Change_level_button2" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 203.0
-offset_right = 400.0
-offset_bottom = 267.0
+offset_left = 223.0
+offset_top = 214.0
+offset_right = 287.0
+offset_bottom = 278.0
 
 [node name="Change_level_button3" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 419.0
-offset_top = 203.0
-offset_right = 483.0
-offset_bottom = 267.0
+offset_left = 483.0
+offset_top = 213.0
+offset_right = 547.0
+offset_bottom = 277.0
 level = "2"
+
+[node name="Change_level_button4" parent="." instance=ExtResource("8_h355i")]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 299.0
+offset_right = 547.0
+offset_bottom = 363.0
+level = "T2"
+
+[node name="Change_level_button5" parent="." instance=ExtResource("8_h355i")]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 214.0
+offset_right = 809.0
+offset_bottom = 278.0
+level = "3"
 
 [node name="Exit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 413.0
-offset_right = 366.0
-offset_bottom = 477.0
+offset_left = 220.0
+offset_top = 459.0
+offset_right = 284.0
+offset_bottom = 523.0
 texture_normal = ExtResource("2_jpimc")
 texture_pressed = ExtResource("3_what1")
 texture_hover = ExtResource("4_8ihh8")
@@ -61,19 +130,4 @@ stream = ExtResource("7_vjc1x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 326)
-zoom = Vector2(2, 2)
-
-[node name="Change_level_button4" parent="." instance=ExtResource("8_h355i")]
-layout_mode = 0
-offset_left = 419.0
-offset_top = 289.0
-offset_right = 483.0
-offset_bottom = 353.0
-level = "T2"
-
-[node name="Change_level_button5" parent="." instance=ExtResource("8_h355i")]
-offset_left = 514.0
-offset_top = 206.0
-offset_right = 578.0
-offset_bottom = 270.0
-level = "3"
+zoom = Vector2(1.6, 1.6)
