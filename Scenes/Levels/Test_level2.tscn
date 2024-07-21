@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmndk1x7m0p2c"]
+
+[ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_h5yi2"]
+[ext_resource type="PackedScene" uid="uid://s5mvqfssafx4" path="res://Prefabs/item.tscn" id="2_rlnoj"]
+[ext_resource type="PackedScene" uid="uid://dfplwgom7csdv" path="res://Prefabs/person.tscn" id="3_6j7kx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_h5yi2")
+correct_pairs = {
+"Person": "Item",
+"Person2": "Item2",
+"Person3": "Item3"
+}
+is_entered = {
+"Person": false,
+"Person2": false,
+"Person3": false
+}
+hints = {
+"Person": "I like read",
+"Person2": "I like poop",
+"Person3": "I like it"
+}
+
+[node name="Persons" type="Node2D" parent="."]
+
+[node name="Person" parent="Persons" instance=ExtResource("3_6j7kx")]
+position = Vector2(121, 577)
+
+[node name="Person2" parent="Persons" instance=ExtResource("3_6j7kx")]
+position = Vector2(534, 594)
+
+[node name="Person3" parent="Persons" instance=ExtResource("3_6j7kx")]
+position = Vector2(924, 601)
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Item" parent="Items" instance=ExtResource("2_rlnoj")]
+position = Vector2(96, 104)
+
+[node name="Item2" parent="Items" instance=ExtResource("2_rlnoj")]
+position = Vector2(474, 87)
+
+[node name="Item3" parent="Items" instance=ExtResource("2_rlnoj")]
+position = Vector2(855, 90)
+
+[node name="Result" type="Label" parent="."]
+offset_left = 513.0
+offset_top = 251.0
+offset_right = 553.0
+offset_bottom = 274.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 326)
