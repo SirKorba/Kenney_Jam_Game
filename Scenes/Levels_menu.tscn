@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvxp08vs8n6cr"]
+[gd_scene load_steps=13 format=3 uid="uid://cvxp08vs8n6cr"]
 
+[ext_resource type="Texture2D" uid="uid://bikw4jl8vwgnk" path="res://Sprites/fon/backgroundColorFall.png" id="1_ob6hu"]
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="1_sjmy7"]
 [ext_resource type="Texture2D" uid="uid://kdfqfc3tfpld" path="res://Sprites/Ui/button_rectangle_border.svg" id="2_gtk1c"]
 [ext_resource type="Texture2D" uid="uid://rvj2h65pg0nl" path="res://Sprites/Ui/button_round_depth_flat.svg" id="2_jpimc"]
@@ -22,6 +23,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.75, 324.75)
+scale = Vector2(0.703613, 0.39502)
+texture = ExtResource("1_ob6hu")
 
 [node name="Easy" type="Label" parent="."]
 layout_mode = 0
@@ -71,42 +77,19 @@ texture = ExtResource("2_gtk1c")
 
 [node name="Change_level_button" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 300.0
-offset_right = 287.0
-offset_bottom = 364.0
+offset_left = 740.0
+offset_top = 444.0
+offset_right = 804.0
+offset_bottom = 508.0
 level = "T"
-
-[node name="Change_level_button2" parent="." instance=ExtResource("8_h355i")]
-layout_mode = 0
-offset_left = 223.0
-offset_top = 214.0
-offset_right = 287.0
-offset_bottom = 278.0
-
-[node name="Change_level_button3" parent="." instance=ExtResource("8_h355i")]
-layout_mode = 0
-offset_left = 483.0
-offset_top = 213.0
-offset_right = 547.0
-offset_bottom = 277.0
-level = "2"
 
 [node name="Change_level_button4" parent="." instance=ExtResource("8_h355i")]
 layout_mode = 0
-offset_left = 483.0
-offset_top = 299.0
-offset_right = 547.0
-offset_bottom = 363.0
+offset_left = 841.0
+offset_top = 443.0
+offset_right = 905.0
+offset_bottom = 507.0
 level = "T2"
-
-[node name="Change_level_button5" parent="." instance=ExtResource("8_h355i")]
-layout_mode = 0
-offset_left = 745.0
-offset_top = 214.0
-offset_right = 809.0
-offset_bottom = 278.0
-level = "3"
 
 [node name="Exit" type="TextureButton" parent="."]
 layout_mode = 0
@@ -131,3 +114,68 @@ stream = ExtResource("7_vjc1x")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 326)
 zoom = Vector2(1.6, 1.6)
+
+[node name="Change_level_button2" parent="." instance=ExtResource("8_h355i")]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 214.0
+offset_right = 287.0
+offset_bottom = 278.0
+
+[node name="Change_level_button6" parent="." instance=ExtResource("8_h355i")]
+offset_left = 223.0
+offset_top = 290.0
+offset_right = 287.0
+offset_bottom = 354.0
+level = "2"
+
+[node name="Change_level_button7" parent="." instance=ExtResource("8_h355i")]
+offset_left = 222.0
+offset_top = 365.0
+offset_right = 286.0
+offset_bottom = 429.0
+level = "3"
+
+[node name="Change_level_button3" parent="." instance=ExtResource("8_h355i")]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 213.0
+offset_right = 547.0
+offset_bottom = 277.0
+level = "4"
+
+[node name="Change_level_button8" parent="." instance=ExtResource("8_h355i")]
+offset_left = 482.0
+offset_top = 289.0
+offset_right = 546.0
+offset_bottom = 353.0
+level = "5"
+
+[node name="Change_level_button9" parent="." instance=ExtResource("8_h355i")]
+offset_left = 483.0
+offset_top = 360.0
+offset_right = 547.0
+offset_bottom = 424.0
+level = "6"
+
+[node name="Change_level_button5" parent="." instance=ExtResource("8_h355i")]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 214.0
+offset_right = 809.0
+offset_bottom = 278.0
+level = "7"
+
+[node name="Change_level_button10" parent="." instance=ExtResource("8_h355i")]
+offset_left = 744.0
+offset_top = 287.0
+offset_right = 808.0
+offset_bottom = 351.0
+level = "8"
+
+[node name="Change_level_button11" parent="." instance=ExtResource("8_h355i")]
+offset_left = 743.0
+offset_top = 361.0
+offset_right = 807.0
+offset_bottom = 425.0
+level = "9"

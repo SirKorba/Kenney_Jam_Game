@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwwvncskxjihk"]
+
+[ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_s83km"]
+[ext_resource type="Texture2D" uid="uid://4ysa08qry8ex" path="res://Sprites/fon/backgroundCastles.png" id="2_eepqj"]
+[ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/person.tscn" id="3_s8exj"]
+[ext_resource type="Texture2D" uid="uid://b6sm8qxribic3" path="res://Sprites/Person/character_robot_wide.png" id="4_teilr"]
+[ext_resource type="Texture2D" uid="uid://qtno85cv6755" path="res://Sprites/Person/character_femalePerson_wide.png" id="5_dife0"]
+[ext_resource type="Texture2D" uid="uid://bll5sfj7baome" path="res://Sprites/Person/character_malePerson_wide.png" id="6_djayq"]
+[ext_resource type="PackedScene" uid="uid://d1k4p7hcsge84" path="res://Prefabs/item.tscn" id="7_o1aq4"]
+[ext_resource type="Texture2D" uid="uid://xqgyblepmx8g" path="res://Sprites/Item/meat-raw.png" id="8_uc2x5"]
+[ext_resource type="Texture2D" uid="uid://cicqiapvn44fu" path="res://Sprites/Item/fish.png" id="9_ndghq"]
+[ext_resource type="Texture2D" uid="uid://b5c8gbicnb20s" path="res://Sprites/Item/apple.png" id="10_5p44x"]
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="11_xf0j7"]
+[ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="12_eadkt"]
+
+[node name="Node2D" type="Node2D"]
+modulate = Color(1, 1, 0.984314, 1)
+self_modulate = Color(0, 0, 0, 1)
+script = ExtResource("1_s83km")
+correct_pairs = {
+"Person": "Item",
+"Person2": "Item2",
+"Person3": "Item3"
+}
+is_entered = {
+"Person": false,
+"Person2": false,
+"Person3": false
+}
+hints = {
+"Person": "I like animals",
+"Person2": "The Baltic Sea is so beautiful...",
+"Person3": "I love the most popular juice flavor"
+}
+level = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.5, 324)
+scale = Vector2(1.12207, 0.640625)
+texture = ExtResource("2_eepqj")
+
+[node name="Persons" type="Node2D" parent="."]
+
+[node name="Person" parent="Persons" instance=ExtResource("3_s8exj")]
+position = Vector2(178, 545)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Persons/Person"]
+position = Vector2(33, -24)
+texture = ExtResource("4_teilr")
+
+[node name="Person2" parent="Persons" instance=ExtResource("3_s8exj")]
+position = Vector2(564, 559)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Persons/Person2"]
+position = Vector2(53, -38)
+texture = ExtResource("5_dife0")
+
+[node name="Person3" parent="Persons" instance=ExtResource("3_s8exj")]
+position = Vector2(966, 564)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Persons/Person3"]
+position = Vector2(43, -41)
+texture = ExtResource("6_djayq")
+
+[node name="Items" type="Node2D" parent="."]
+position = Vector2(-10, -41)
+
+[node name="Item" parent="Items" instance=ExtResource("7_o1aq4")]
+position = Vector2(59, 119)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Items/Item"]
+position = Vector2(123, 48)
+scale = Vector2(4.29688, 2.73438)
+texture = ExtResource("8_uc2x5")
+
+[node name="Item2" parent="Items" instance=ExtResource("7_o1aq4")]
+position = Vector2(479, 117)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Items/Item2"]
+position = Vector2(123, 44)
+scale = Vector2(4.07813, 2.51563)
+texture = ExtResource("9_ndghq")
+
+[node name="Item3" parent="Items" instance=ExtResource("7_o1aq4")]
+position = Vector2(879, 118)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Items/Item3"]
+position = Vector2(119, 50)
+scale = Vector2(4.09375, 2.57813)
+texture = ExtResource("10_5p44x")
+
+[node name="Result" type="Label" parent="."]
+offset_left = 513.0
+offset_top = 251.0
+offset_right = 553.0
+offset_bottom = 274.0
+theme = ExtResource("11_xf0j7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="Complete_level_button" parent="." instance=ExtResource("12_eadkt")]
+offset_left = 483.0
+offset_top = 248.0
+offset_right = 675.0
+offset_bottom = 312.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 326)
