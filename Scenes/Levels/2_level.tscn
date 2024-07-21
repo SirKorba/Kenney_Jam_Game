@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="4_o3ccx"]
 [ext_resource type="Texture2D" uid="uid://qtno85cv6755" path="res://Sprites/Person/character_femalePerson_wide.png" id="5_sot0g"]
 [ext_resource type="Texture2D" uid="uid://bll5sfj7baome" path="res://Sprites/Person/character_malePerson_wide.png" id="6_8l2mb"]
-[ext_resource type="Texture2D" uid="uid://xqgyblepmx8g" path="res://Sprites/Item/meat-raw.png" id="8_w2swc"]
-[ext_resource type="Texture2D" uid="uid://cicqiapvn44fu" path="res://Sprites/Item/fish.png" id="9_4kosp"]
-[ext_resource type="Texture2D" uid="uid://b5c8gbicnb20s" path="res://Sprites/Item/apple.png" id="10_f2q38"]
+[ext_resource type="Texture2D" uid="uid://db3ml5qko1qt" path="res://Sprites/Item/broccoli.png" id="8_vqkng"]
+[ext_resource type="Texture2D" uid="uid://b83jo5u22xc0t" path="res://Sprites/Item/fish-bones.png" id="9_bogj3"]
+[ext_resource type="Texture2D" uid="uid://cbxy28rr2gy6d" path="res://Sprites/Item/pineapple.png" id="10_fhfdm"]
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="11_r0jtf"]
 
 [node name="Node2D" type="Node2D"]
@@ -28,9 +28,9 @@ is_entered = {
 "Person3": false
 }
 hints = {
-"Person": "I like animals",
-"Person2": "The Baltic Sea is so beautiful...",
-"Person3": "I love the most popular juice flavor"
+"Person": "My child doesn't like to eat them",
+"Person2": "My cat eats fish",
+"Person3": " I have a pen... I have a apple"
 }
 level = 2
 
@@ -71,7 +71,7 @@ position = Vector2(59, 119)
 [node name="Sprite2D2" type="Sprite2D" parent="Items/Item"]
 position = Vector2(123, 48)
 scale = Vector2(4.29688, 2.73438)
-texture = ExtResource("8_w2swc")
+texture = ExtResource("8_vqkng")
 
 [node name="Item2" parent="Items" instance=ExtResource("3_raqtw")]
 position = Vector2(479, 117)
@@ -79,7 +79,7 @@ position = Vector2(479, 117)
 [node name="Sprite2D3" type="Sprite2D" parent="Items/Item2"]
 position = Vector2(123, 44)
 scale = Vector2(4.07813, 2.51563)
-texture = ExtResource("9_4kosp")
+texture = ExtResource("9_bogj3")
 
 [node name="Item3" parent="Items" instance=ExtResource("3_raqtw")]
 position = Vector2(879, 118)
@@ -87,7 +87,7 @@ position = Vector2(879, 118)
 [node name="Sprite2D2" type="Sprite2D" parent="Items/Item3"]
 position = Vector2(119, 50)
 scale = Vector2(4.09375, 2.57813)
-texture = ExtResource("10_f2q38")
+texture = ExtResource("10_fhfdm")
 
 [node name="Result" type="Label" parent="."]
 offset_left = 513.0

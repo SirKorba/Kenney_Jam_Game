@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b81twh1xtva0u"]
+[gd_scene load_steps=8 format=3 uid="uid://b81twh1xtva0u"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_tyq1o"]
+[ext_resource type="Texture2D" uid="uid://bikw4jl8vwgnk" path="res://Sprites/fon/backgroundColorFall.png" id="2_7ff6n"]
 [ext_resource type="Texture2D" uid="uid://bq2wrnl66j5dj" path="res://Sprites/Ui/button_rectangle_flat.svg" id="2_gop8s"]
 [ext_resource type="Texture2D" uid="uid://xa8stvyg8bto" path="res://Sprites/Ui/button_rectangle_gloss.svg" id="3_45sgc"]
 [ext_resource type="Texture2D" uid="uid://di3cgwtpb75ov" path="res://Sprites/Ui/button_rectangle_gradient.svg" id="4_hixyg"]
@@ -15,6 +16,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tyq1o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579, 318)
+scale = Vector2(0.564453, 0.320313)
+texture = ExtResource("2_7ff6n")
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
