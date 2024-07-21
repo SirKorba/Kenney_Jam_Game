@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b81twh1xtva0u"]
+[gd_scene load_steps=9 format=3 uid="uid://b81twh1xtva0u"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_tyq1o"]
 [ext_resource type="Texture2D" uid="uid://bikw4jl8vwgnk" path="res://Sprites/fon/backgroundColorFall.png" id="2_7ff6n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://di3cgwtpb75ov" path="res://Sprites/Ui/button_rectangle_gradient.svg" id="4_hixyg"]
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="5_tvxdp"]
 [ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/Ui/click-a.ogg" id="6_l1rte"]
+[ext_resource type="AudioStream" uid="uid://eaeeof4ypsnr" path="res://Sounds/music/tunetank.com_5630_ready-to-play_by_alexey-anisimov.mp3" id="8_lk54w"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -77,6 +78,10 @@ stream = ExtResource("6_l1rte")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 319)
 zoom = Vector2(2, 2)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lk54w")
+autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

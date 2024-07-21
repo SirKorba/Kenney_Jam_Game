@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4kbixi2j3w8a"]
+[gd_scene load_steps=14 format=3 uid="uid://c4kbixi2j3w8a"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_41bgu"]
 [ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/person.tscn" id="2_2ndf1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bhgpdk5vso6oh" path="res://Sprites/Item/banana.png" id="9_g1d1a"]
 [ext_resource type="Texture2D" uid="uid://bejuyewf81byx" path="res://Sprites/Item/pumpkin.png" id="10_i5oqi"]
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="11_pkmhy"]
+[ext_resource type="AudioStream" uid="uid://eaeeof4ypsnr" path="res://Sounds/music/tunetank.com_5630_ready-to-play_by_alexey-anisimov.mp3" id="13_643ly"]
 
 [node name="Node2D" type="Node2D"]
 modulate = Color(1, 1, 0.984314, 1)
@@ -106,3 +107,7 @@ offset_bottom = 312.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 326)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_643ly")
+autoplay = true
