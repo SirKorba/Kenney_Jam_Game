@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://du7vxt7mvyljt"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_h5yi2"]
-[ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/Person.tscn" id="2_7imvd"]
+[ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/person.tscn" id="2_7imvd"]
 [ext_resource type="PackedScene" uid="uid://d1k4p7hcsge84" path="res://Prefabs/item.tscn" id="2_rlnoj"]
 [ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="4_0fhsu"]
 
@@ -18,7 +18,7 @@ is_entered = {
 "Person3": false
 }
 hints = {
-"Person": "1",
+"Person": "ку",
 "Person2": "2",
 "Person3": "3"
 }

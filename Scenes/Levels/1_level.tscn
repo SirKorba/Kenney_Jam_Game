@@ -1,3 +1,90 @@
-[gd_scene format=3 uid="uid://p120yg5ucf38"]
+[gd_scene load_steps=9 format=3 uid="uid://p120yg5ucf38"]
 
-[node name="Node2D2" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_kx3hg"]
+[ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/person.tscn" id="2_ts4bp"]
+[ext_resource type="PackedScene" uid="uid://d1k4p7hcsge84" path="res://Prefabs/item.tscn" id="3_ejm6k"]
+[ext_resource type="Texture2D" uid="uid://cicqiapvn44fu" path="res://Sprites/Item/fish.png" id="4_bqijj"]
+[ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="4_hmmwa"]
+[ext_resource type="Texture2D" uid="uid://b5c8gbicnb20s" path="res://Sprites/Item/apple.png" id="5_eanpe"]
+[ext_resource type="Texture2D" uid="uid://xqgyblepmx8g" path="res://Sprites/Item/meat-raw.png" id="6_t5svb"]
+[ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="7_nwleo"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kx3hg")
+correct_pairs = {
+"Person": "Item",
+"Person2": "Item2",
+"Person3": "Item3"
+}
+is_entered = {
+"Person": false,
+"Person2": false,
+"Person3": false
+}
+hints = {
+"Person": "I like animals",
+"Person2": "The Baltic Sea is so beautiful...",
+"Person3": "I love the most popular juice flavor"
+}
+level = 1
+
+[node name="Persons" type="Node2D" parent="."]
+
+[node name="Person" parent="Persons" instance=ExtResource("2_ts4bp")]
+position = Vector2(178, 545)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Persons/Person"]
+
+[node name="Person2" parent="Persons" instance=ExtResource("2_ts4bp")]
+position = Vector2(564, 559)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Persons/Person2"]
+
+[node name="Person3" parent="Persons" instance=ExtResource("2_ts4bp")]
+position = Vector2(966, 564)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Persons/Person3"]
+
+[node name="Items" type="Node2D" parent="."]
+position = Vector2(-10, -41)
+
+[node name="Item" parent="Items" instance=ExtResource("3_ejm6k")]
+position = Vector2(64, 102)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Items/Item"]
+position = Vector2(121.5, 49.5)
+scale = Vector2(4.07813, 2.51563)
+texture = ExtResource("4_bqijj")
+
+[node name="Item2" parent="Items" instance=ExtResource("3_ejm6k")]
+position = Vector2(461, 31)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Items/Item2"]
+position = Vector2(118, 42.5)
+scale = Vector2(4.09375, 2.57813)
+texture = ExtResource("5_eanpe")
+
+[node name="Item3" parent="Items" instance=ExtResource("3_ejm6k")]
+position = Vector2(875, 55)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Items/Item3"]
+position = Vector2(126.5, 48.5)
+scale = Vector2(4.29688, 2.73438)
+texture = ExtResource("6_t5svb")
+
+[node name="Result" type="Label" parent="."]
+offset_left = 513.0
+offset_top = 251.0
+offset_right = 553.0
+offset_bottom = 274.0
+theme = ExtResource("7_nwleo")
+theme_override_font_sizes/font_size = 20
+
+[node name="Complete_level_button" parent="." instance=ExtResource("4_hmmwa")]
+offset_left = 483.0
+offset_top = 248.0
+offset_right = 675.0
+offset_bottom = 312.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 326)

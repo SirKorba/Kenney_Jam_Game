@@ -70,3 +70,10 @@ offset_top = 289.0
 offset_right = 483.0
 offset_bottom = 353.0
 level = "T2"
+
+[node name="Change_level_button5" parent="." instance=ExtResource("8_h355i")]
+offset_left = 514.0
+offset_top = 206.0
+offset_right = 578.0
+offset_bottom = 270.0
+level = "3"

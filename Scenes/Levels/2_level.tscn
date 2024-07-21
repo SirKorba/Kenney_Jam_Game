@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://oq2qmjgkt8ux"]
+
+[ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_4jgq4"]
+[ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/person.tscn" id="2_og4ks"]
+[ext_resource type="PackedScene" uid="uid://d1k4p7hcsge84" path="res://Prefabs/item.tscn" id="3_raqtw"]
+[ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="4_o3ccx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4jgq4")
+correct_pairs = {
+"Person": "Item",
+"Person2": "Item2",
+"Person3": "Item3"
+}
+is_entered = {
+"Person": false,
+"Person2": false,
+"Person3": false
+}
+hints = {
+"Person": "ку",
+"Person2": "2",
+"Person3": "3"
+}
+level = 2
+
+[node name="Persons" type="Node2D" parent="."]
+
+[node name="Person" parent="Persons" instance=ExtResource("2_og4ks")]
+position = Vector2(178, 545)
+
+[node name="Person2" parent="Persons" instance=ExtResource("2_og4ks")]
+position = Vector2(564, 559)
+
+[node name="Person3" parent="Persons" instance=ExtResource("2_og4ks")]
+position = Vector2(966, 564)
+
+[node name="Items" type="Node2D" parent="."]
+position = Vector2(-10, -41)
+
+[node name="Item" parent="Items" instance=ExtResource("3_raqtw")]
+position = Vector2(64, 102)
+
+[node name="Item2" parent="Items" instance=ExtResource("3_raqtw")]
+position = Vector2(461, 31)
+
+[node name="Item3" parent="Items" instance=ExtResource("3_raqtw")]
+position = Vector2(875, 55)
+
+[node name="Result" type="Label" parent="."]
+offset_left = 513.0
+offset_top = 251.0
+offset_right = 553.0
+offset_bottom = 274.0
+
+[node name="Complete_level_button" parent="." instance=ExtResource("4_o3ccx")]
+offset_left = 483.0
+offset_top = 248.0
+offset_right = 675.0
+offset_bottom = 312.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 326)
