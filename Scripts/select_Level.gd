@@ -3,7 +3,7 @@ extends TextureButton
 @export var level = "1"
 
 var scene = "res://Scenes/Levels/"
-var complete_level = 1
+var complete_level = CONFIG.COMPLETE_LEVEL + 1
 
 func _ready():
 	if level != "T" and level != "T2" and int(level) > complete_level:

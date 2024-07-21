@@ -32,6 +32,7 @@ func check_match(person, item):
 	if all_correct:
 		$Complete_level_button.show()
 		$Complete_level_button.disabled = false
+		CONFIG.COMPLETE_LEVEL += 1
 		
 
 func show_result(message):
