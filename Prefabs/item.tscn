@@ -1,17 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://s5mvqfssafx4"]
+[gd_scene load_steps=4 format=3 uid="uid://d1k4p7hcsge84"]
 
-[ext_resource type="Script" path="res://Scripts/Item_script.gd" id="1_jyeol"]
+[ext_resource type="Script" path="res://Scripts/Item_script.gd" id="1_i3yqa"]
 [ext_resource type="Texture2D" uid="uid://kdfqfc3tfpld" path="res://Sprites/Ui/button_rectangle_border.svg" id="2_jcpvm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ket8r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m01i"]
 size = Vector2(357, 233)
 
 [node name="Item" type="Area2D"]
-script = ExtResource("1_jyeol")
+position = Vector2(-1169, -774)
+script = ExtResource("1_i3yqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(118.447, 47.2487)
-shape = SubResource("RectangleShape2D_ket8r")
+shape = SubResource("RectangleShape2D_8m01i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(118.947, 47.2487)

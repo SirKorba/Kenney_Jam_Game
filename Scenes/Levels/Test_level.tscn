@@ -12,7 +12,7 @@ size = Vector2(357, 233)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0hsp"]
 size = Vector2(320.307, 331.26)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ouij6")
 
 [node name="Items" type="Node2D" parent="."]
@@ -102,18 +102,21 @@ offset_right = 328.0
 offset_bottom = 331.0
 
 [node name="HintLabel1" type="Label" parent="HintLabel"]
+layout_mode = 0
 offset_left = 96.7119
 offset_top = 77.2997
 offset_right = 373.712
 offset_bottom = 156.3
 
 [node name="HintLabel2" type="Label" parent="HintLabel"]
+layout_mode = 0
 offset_left = 459.138
 offset_top = 68.0498
 offset_right = 736.138
 offset_bottom = 147.05
 
 [node name="HintLabel3" type="Label" parent="HintLabel"]
+layout_mode = 0
 offset_left = 852.799
 offset_top = 76.4536
 offset_right = 1129.8
