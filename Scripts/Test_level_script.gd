@@ -3,6 +3,7 @@ extends Node
 @export var correct_pairs = {}
 @export var is_entered = {}
 @export var hints = {}
+@export var level:int
 
 var current_pairs = {}
 var all_correct = false
@@ -32,7 +33,7 @@ func check_match(person, item):
 	if all_correct:
 		$Complete_level_button.show()
 		$Complete_level_button.disabled = false
-		CONFIG.COMPLETE_LEVEL += 1
+		CONFIG.COMPLETE_LEVEL = level
 		
 
 func show_result(message):
