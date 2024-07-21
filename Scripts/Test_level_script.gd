@@ -15,11 +15,10 @@ func _ready():
 		print("Error: not correct number of args in Level_Script")
 		get_tree().quit()
 	
-	current_pairs = is_entered
+	current_pairs = correct_pairs.duplicate()
 	
 	for per in current_pairs.keys():
 		current_pairs[per] = null
-	print(current_pairs)
 
 func check_match(person, item):
 	if correct_pairs[person] == item:
@@ -39,7 +38,6 @@ func show_result(message):
 	$Result.text = message
 
 func check_all_correct():
-	print(current_pairs)
 	all_correct = true
 	for person in current_pairs.keys():
 		if current_pairs[person] != correct_pairs[person]:
