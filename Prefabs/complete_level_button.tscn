@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://di8g2tmgxlfbl"]
+
+[ext_resource type="Texture2D" uid="uid://b40165yoow0br" path="res://Sprites/Ui/button_rectangle_depth_flat.svg" id="1_g63xq"]
+[ext_resource type="Texture2D" uid="uid://dpikym8fvauo1" path="res://Sprites/Ui/button_rectangle_depth_gloss.svg" id="2_ywxy0"]
+[ext_resource type="Texture2D" uid="uid://dqfwyb2jqrvax" path="res://Sprites/Ui/button_rectangle_depth_gradient.svg" id="3_h3m6n"]
+[ext_resource type="FontFile" uid="uid://cmag6q06ghlfk" path="res://Fonts/Kenney Future Narrow.ttf" id="4_0k1he"]
+[ext_resource type="Script" path="res://Scripts/complete_level_button.gd" id="4_q4rgt"]
+
+[sub_resource type="Theme" id="Theme_xwj1w"]
+default_font = ExtResource("4_0k1he")
+default_font_size = 27
+
+[node name="Complete_level_button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_g63xq")
+texture_pressed = ExtResource("2_ywxy0")
+texture_hover = ExtResource("3_h3m6n")
+script = ExtResource("4_q4rgt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 198.0
+offset_bottom = 53.0
+theme = SubResource("Theme_xwj1w")
+text = "Complete"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

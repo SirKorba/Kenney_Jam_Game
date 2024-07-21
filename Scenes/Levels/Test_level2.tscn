@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://du7vxt7mvyljt"]
+[gd_scene load_steps=5 format=3 uid="uid://du7vxt7mvyljt"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_h5yi2"]
 [ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/Person.tscn" id="2_7imvd"]
 [ext_resource type="PackedScene" uid="uid://d1k4p7hcsge84" path="res://Prefabs/item.tscn" id="2_rlnoj"]
+[ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="4_0fhsu"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h5yi2")
@@ -50,6 +51,12 @@ offset_left = 513.0
 offset_top = 251.0
 offset_right = 553.0
 offset_bottom = 274.0
+
+[node name="Complete_level_button" parent="." instance=ExtResource("4_0fhsu")]
+offset_left = 483.0
+offset_top = 248.0
+offset_right = 675.0
+offset_bottom = 312.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 326)

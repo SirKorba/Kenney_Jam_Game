@@ -11,8 +11,10 @@ func show_hint(person):
 func _on_area_entered(area):
 	if area.name == $"../..".correct_pairs[person]:
 		$"../..".is_entered[person] = true
+		$"../..".current_pairs[person] = area.name
 	else:
 		$"../..".is_entered[person] = null
+		$"../..".current_pairs[person] = null
 
 
 func _on_area_exited(area):

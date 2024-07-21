@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://kdfqfc3tfpld" path="res://Sprites/Ui/button_rectangle_border.svg" id="2_jcpvm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m01i"]
-size = Vector2(357, 233)
+size = Vector2(262, 169)
 
 [node name="Item" type="Area2D"]
-position = Vector2(-1169, -774)
+position = Vector2(-5, 8)
 script = ExtResource("1_i3yqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(118.447, 47.2487)
+position = Vector2(121, 44.5)
 shape = SubResource("RectangleShape2D_8m01i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(118.947, 47.2487)
-scale = Vector2(1.88542, 3.67188)
+position = Vector2(123, 45)
+scale = Vector2(1.45, 2.825)
 texture = ExtResource("2_jcpvm")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
