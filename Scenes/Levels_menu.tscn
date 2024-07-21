@@ -76,22 +76,6 @@ show_behind_parent = true
 position = Vector2(62, 24)
 texture = ExtResource("2_gtk1c")
 
-[node name="Change_level_button" parent="." instance=ExtResource("8_h355i")]
-layout_mode = 0
-offset_left = 740.0
-offset_top = 444.0
-offset_right = 804.0
-offset_bottom = 508.0
-level = "T"
-
-[node name="Change_level_button4" parent="." instance=ExtResource("8_h355i")]
-layout_mode = 0
-offset_left = 841.0
-offset_top = 443.0
-offset_right = 905.0
-offset_bottom = 507.0
-level = "T2"
-
 [node name="Exit" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 220.0

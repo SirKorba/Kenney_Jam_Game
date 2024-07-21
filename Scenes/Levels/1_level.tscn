@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://p120yg5ucf38"]
+[gd_scene load_steps=20 format=3 uid="uid://p120yg5ucf38"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_kx3hg"]
 [ext_resource type="PackedScene" uid="uid://b422scy6afgit" path="res://Prefabs/person.tscn" id="2_ts4bp"]
@@ -13,6 +13,12 @@
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="7_nwleo"]
 [ext_resource type="Texture2D" uid="uid://4ysa08qry8ex" path="res://Sprites/fon/backgroundCastles.png" id="12_kw3fi"]
 [ext_resource type="AudioStream" uid="uid://eaeeof4ypsnr" path="res://Sounds/music/tunetank.com_5630_ready-to-play_by_alexey-anisimov.mp3" id="13_d408r"]
+[ext_resource type="Texture2D" uid="uid://rvj2h65pg0nl" path="res://Sprites/Ui/button_round_depth_flat.svg" id="14_gbexc"]
+[ext_resource type="Texture2D" uid="uid://byg1g85ltwf0y" path="res://Sprites/Ui/button_round_depth_gloss.svg" id="15_wyhoc"]
+[ext_resource type="Texture2D" uid="uid://dclp5fmtmnjl0" path="res://Sprites/Ui/button_round_depth_gradient.svg" id="16_akp8w"]
+[ext_resource type="Script" path="res://Scripts/Exit_to_mainmenu_button.gd" id="17_qlox4"]
+[ext_resource type="Texture2D" uid="uid://uq7gmvihabes" path="res://Sprites/Ui/icon_outline_cross.svg" id="18_k13xq"]
+[ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/Ui/click-a.ogg" id="19_05uqk"]
 
 [node name="Node2D" type="Node2D"]
 modulate = Color(1, 1, 0.984314, 1)
@@ -111,3 +117,22 @@ position = Vector2(579, 326)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_d408r")
 autoplay = true
+
+[node name="ExitLevel" type="TextureButton" parent="."]
+offset_left = 9.0
+offset_top = 297.0
+offset_right = 73.0
+offset_bottom = 361.0
+texture_normal = ExtResource("14_gbexc")
+texture_pressed = ExtResource("15_wyhoc")
+texture_hover = ExtResource("16_akp8w")
+script = ExtResource("17_qlox4")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitLevel"]
+position = Vector2(32, 29)
+scale = Vector2(2, 2)
+texture = ExtResource("18_k13xq")
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="ExitLevel"]
+position = Vector2(480, 220)
+stream = ExtResource("19_05uqk")

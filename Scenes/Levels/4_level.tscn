@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c65tw0n446ob2"]
+[gd_scene load_steps=20 format=3 uid="uid://c65tw0n446ob2"]
 
 [ext_resource type="Script" path="res://Scripts/Test_level_script.gd" id="1_pgkxa"]
 [ext_resource type="Texture2D" uid="uid://4ysa08qry8ex" path="res://Sprites/fon/backgroundCastles.png" id="2_5l2kp"]
@@ -13,6 +13,12 @@
 [ext_resource type="Theme" uid="uid://b8a7y6ihsexw0" path="res://Themes/ui_theme.tres" id="11_eybkb"]
 [ext_resource type="PackedScene" uid="uid://di8g2tmgxlfbl" path="res://Prefabs/complete_level_button.tscn" id="12_036d6"]
 [ext_resource type="AudioStream" uid="uid://eaeeof4ypsnr" path="res://Sounds/music/tunetank.com_5630_ready-to-play_by_alexey-anisimov.mp3" id="13_u2t4f"]
+[ext_resource type="Texture2D" uid="uid://rvj2h65pg0nl" path="res://Sprites/Ui/button_round_depth_flat.svg" id="14_yse8d"]
+[ext_resource type="Texture2D" uid="uid://byg1g85ltwf0y" path="res://Sprites/Ui/button_round_depth_gloss.svg" id="15_p4r5e"]
+[ext_resource type="Texture2D" uid="uid://dclp5fmtmnjl0" path="res://Sprites/Ui/button_round_depth_gradient.svg" id="16_dhn1g"]
+[ext_resource type="Script" path="res://Scripts/Exit_to_mainmenu_button.gd" id="17_4oaxw"]
+[ext_resource type="Texture2D" uid="uid://uq7gmvihabes" path="res://Sprites/Ui/icon_outline_cross.svg" id="18_fcbtb"]
+[ext_resource type="AudioStream" uid="uid://bjqyjd56ds5wr" path="res://Sounds/Ui/click-a.ogg" id="19_deho3"]
 
 [node name="Node2D" type="Node2D"]
 modulate = Color(1, 1, 0.984314, 1)
@@ -67,7 +73,7 @@ texture = ExtResource("6_1pxyu")
 position = Vector2(-10, -41)
 
 [node name="Item" parent="Items" instance=ExtResource("7_xcoqv")]
-position = Vector2(59, 119)
+position = Vector2(469, 116)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Items/Item"]
 position = Vector2(123, 48)
@@ -75,7 +81,7 @@ scale = Vector2(4.29688, 2.73438)
 texture = ExtResource("8_84ame")
 
 [node name="Item2" parent="Items" instance=ExtResource("7_xcoqv")]
-position = Vector2(479, 117)
+position = Vector2(889, 121)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Items/Item2"]
 position = Vector2(123, 44)
@@ -83,7 +89,7 @@ scale = Vector2(4.07813, 2.51563)
 texture = ExtResource("9_ohi22")
 
 [node name="Item3" parent="Items" instance=ExtResource("7_xcoqv")]
-position = Vector2(879, 118)
+position = Vector2(74, 119)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Items/Item3"]
 position = Vector2(119, 50)
@@ -111,3 +117,22 @@ position = Vector2(579, 326)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_u2t4f")
 autoplay = true
+
+[node name="ExitLevel" type="TextureButton" parent="."]
+offset_left = 10.0
+offset_top = 316.0
+offset_right = 74.0
+offset_bottom = 380.0
+texture_normal = ExtResource("14_yse8d")
+texture_pressed = ExtResource("15_p4r5e")
+texture_hover = ExtResource("16_dhn1g")
+script = ExtResource("17_4oaxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitLevel"]
+position = Vector2(32, 28)
+scale = Vector2(2, 2)
+texture = ExtResource("18_fcbtb")
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="ExitLevel"]
+position = Vector2(480, 220)
+stream = ExtResource("19_deho3")
