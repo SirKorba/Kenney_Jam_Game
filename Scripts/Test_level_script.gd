@@ -23,10 +23,10 @@ func _ready():
 
 func check_match(person, item):
 	if correct_pairs[person] == item:
-		show_result("Correctly!")
+		show_result("")
 		current_pairs[person] = item
 	else:
-		show_result("Try again.")
+		show_result("")
 	
 	check_all_correct()
 	
