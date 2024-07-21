@@ -21,4 +21,5 @@ CONFIG="*res://Scripts/CONFIG.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://Sprites/Cursor/cursor_default.svg"
