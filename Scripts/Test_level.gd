@@ -12,6 +12,12 @@ var correct_pairs = {
 	"Person3": "Item3"
 }
 
+var current_pairs = {
+	"Person1": null,
+	"Person2": null,
+	"Person3": null
+}
+
 var is_entered = {
 	"Person1": false,
 	"Person2": false,
@@ -28,6 +34,9 @@ var hints = {
 # Создаем окно уведомления и текстуру
 @onready var result_popup = $ResultPopup
 @onready var result_label = $ResultPopup/Sprite2D/ResultLabel
+
+# Окно для уведомления о прохождении уровня
+@onready var level_complete_popup = $LevelCompletePopup
 
 # Ссылки на HintLabel для каждого персонажа
 @onready var hint_label_1 = $HintLabel/HintLabel1
@@ -93,9 +102,12 @@ func _process(_delta):
 # Проверка правильности выбора
 func check_match(person, item):
 	if correct_pairs[person] == item:
-		show_result("Correctly!")
+		show_result("Correct!")
+		current_pairs[person] = item
 	else:
 		show_result("Wrong, try again.")
+		current_pairs[person] = null
+	check_all_correct()
 
 # Проверка, был ли предмет отпущен над персонажем
 func check_drop():
@@ -106,31 +118,52 @@ func check_drop():
 
 # Функция для отображения результата
 func show_result(message):
-	$ResultPopup/Sprite2D/ResultLabel.text = message
-	$ResultPopup.popup_centered()
+	result_label.text = message
+	result_popup.popup_centered()
 
 # Функция для скрытия окна при нажатии
 func _on_ResultPopup_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		$ResultPopup.hide()
+		result_popup.hide()
+
+# Функция для проверки правильности всех ответов
+func check_all_correct():
+	var all_correct = true
+	for person in current_pairs.keys():
+		if current_pairs[person] != correct_pairs[person]:
+			all_correct = false
+			break
+
+	if all_correct:
+		level_complete_popup.popup_centered()
+
+# Функция для перехода на сцену меню уровней
+func _on_LevelCompletePopup_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Levels_menu.tscn")
 
 func _on_person_1_area_entered(area):
 	if area.name == "Item1":
 		is_entered["Person1"] = true
+		current_pairs["Person1"] = area.name
 	else:
 		is_entered["Person1"] = null
+		current_pairs["Person1"] = null
 
 func _on_person_2_area_entered(area):
 	if area.name == "Item2":
 		is_entered["Person2"] = true
+		current_pairs["Person2"] = area.name
 	else:
 		is_entered["Person2"] = null
+		current_pairs["Person2"] = null
 
 func _on_person_3_area_entered(area):
 	if area.name == "Item3":
 		is_entered["Person3"] = true
+		current_pairs["Person3"] = area.name
 	else:
 		is_entered["Person3"] = null
+		current_pairs["Person3"] = null
 
 func _on_person_1_area_exited(area):
 	if area.name == "Item1":
