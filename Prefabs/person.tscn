@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b422scy6afgit"]
+[gd_scene load_steps=3 format=3 uid="uid://b422scy6afgit"]
 
 [ext_resource type="Script" path="res://Scripts/Person_script.gd" id="1_grp0h"]
-[ext_resource type="Texture2D" uid="uid://b40165yoow0br" path="res://Sprites/Ui/button_rectangle_depth_flat.svg" id="1_lpyl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5p12"]
 size = Vector2(270, 298)
@@ -14,16 +13,12 @@ script = ExtResource("1_grp0h")
 position = Vector2(47, 34)
 shape = SubResource("RectangleShape2D_t5p12")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(47.5, 33)
-scale = Vector2(1.5, 4.839)
-texture = ExtResource("1_lpyl2")
-
 [node name="HintLabel" type="Label" parent="."]
 offset_left = -82.0
 offset_top = -170.0
 offset_right = -42.0
 offset_bottom = -147.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
